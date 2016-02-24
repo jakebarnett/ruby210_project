@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "shows a single project" do
     before(:all) do
+        Project.destroy_all
         @project1 = FactoryGirl.create(:project)
     end
     

@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Lists all the projects", type: :feature do
+    before(:all) do
+        Project.destroy_all
+    end
+    
     scenario "it lets users know if there are no projects" do
         visit '/projects'
         

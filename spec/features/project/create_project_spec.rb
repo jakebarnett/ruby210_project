@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'Creating a new project', type: :feature do
+    before(:all) do
+        Project.destroy_all
+    end
+    
     scenario 'succeeds with valid values' do
         visit '/projects'
         click_link "New Project"

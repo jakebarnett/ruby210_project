@@ -1,6 +1,7 @@
 example_id                                          | status | run_time        |
 --------------------------------------------------- | ------ | --------------- |
-./spec/features/project/create_project_spec.rb[1:1] | passed | 0.05757 seconds |
-./spec/features/project/list_project_spec.rb[1:1]   | passed | 0.20307 seconds |
-./spec/features/project/list_project_spec.rb[1:2:1] | passed | 0.01501 seconds |
-./spec/features/project/show_project_spec.rb[1:1]   | passed | 0.02586 seconds |
+./spec/features/project/create_project_spec.rb[1:1] | passed | 0.04478 seconds |
+./spec/features/project/edit_project_spec.rb[1:1]   | passed | 0.46934 seconds |
+./spec/features/project/list_project_spec.rb[1:1]   | passed | 0.01092 seconds |
+./spec/features/project/list_project_spec.rb[1:2:1] | passed | 0.03321 seconds |
+./spec/features/project/show_project_spec.rb[1:1]   | passed | 0.021 seconds   |
