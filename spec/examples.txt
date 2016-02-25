@@ -1,8 +1,9 @@
-example_id                                          | status | run_time        |
---------------------------------------------------- | ------ | --------------- |
-./spec/features/project/create_project_spec.rb[1:1] | passed | 0.04385 seconds |
-./spec/features/project/delete_project_spec.rb[1:1] | passed | 0.05032 seconds |
-./spec/features/project/edit_project_spec.rb[1:1]   | passed | 0.09106 seconds |
-./spec/features/project/list_project_spec.rb[1:1]   | passed | 0.01679 seconds |
-./spec/features/project/list_project_spec.rb[1:2:1] | passed | 0.02613 seconds |
-./spec/features/project/show_project_spec.rb[1:1]   | passed | 0.49611 seconds |
+example_id                                            | status | run_time        |
+----------------------------------------------------- | ------ | --------------- |
+./spec/features/attribs/create_attribute_spec.rb[1:1] | passed | 0.09788 seconds |
+./spec/features/project/create_project_spec.rb[1:1]   | passed | 0.04454 seconds |
+./spec/features/project/delete_project_spec.rb[1:1]   | passed | 0.04952 seconds |
+./spec/features/project/edit_project_spec.rb[1:1]     | passed | 0.05118 seconds |
+./spec/features/project/list_project_spec.rb[1:1]     | passed | 0.02203 seconds |
+./spec/features/project/list_project_spec.rb[1:2:1]   | passed | 0.02829 seconds |
+./spec/features/project/show_project_spec.rb[1:1]     | passed | 0.47381 seconds |
