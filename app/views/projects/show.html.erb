@@ -5,6 +5,7 @@
 <ul>
     <% @attribs.each do |attribute| %>
     <li><%= attribute.name %></li>
+    <li><%= link_to("Edit Attribute", edit_project_attrib_path(@project, attribute)) %></li>
     <% end %>
 </ul>
 <p><%= link_to("Add Attribute", new_project_attrib_path(@project)) %></p>
