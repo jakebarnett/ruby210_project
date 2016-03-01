@@ -36,12 +36,18 @@ class AttribsController < ApplicationController
         @project = Project.find(params[:project_id])
         @attrib = @project.attribs.find([params[:id]]).first
         if @attrib.update(attrib_params)
-          redirect_to project_path(@project)
+            redirect_to project_path(@project)
         else
-        # flash.now[:alert] = 'Task not saved.'
-        render :edit
+            # flash.now[:alert] = 'Task not saved.'
+            render :edit
+        end
     end
-  end
+    
+    def destroy
+        @project = Project.find(params[:project_id])
+        @project.attribs.find([params[:id]]).first.destroy
+        redirect_to project_path(@project)
+    end
     
     private
     
