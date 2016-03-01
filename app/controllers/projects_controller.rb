@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
     def show
         @project = Project.find(params[:id])
         @attribs = @project.attribs.all
+        @components = @project.components.all
     end
     
     def edit

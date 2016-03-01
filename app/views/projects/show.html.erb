@@ -8,5 +8,15 @@
     <% end %>
 </ul>
 <p><%= link_to("Add Attribute", new_project_attrib_path(@project)) %></p>
+
+
+<h2>Components</h2>
+<ul>
+    <% @components.each do |component| %>
+    <li><%= component.name %></li><span><%= link_to("Edit Component", edit_project_component_path(@project, component)) %></span>
+    <% end %>
+</ul>
+<p><%= link_to("Add Component", new_project_component_path(@project)) %></p>
+
 <p><%= link_to("Edit", edit_project_path) %></p>
 <p><%= link_to("Delete", project_path(@project), method: :delete) %></p>

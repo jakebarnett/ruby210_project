@@ -1,9 +1,8 @@
-class CreateAttrib < ActiveRecord::Migration
+class CreateComponents < ActiveRecord::Migration
   def change
-    create_table :attribs do |t|
+    create_table :components do |t|
       t.integer :project_id
       t.string :name
-      t.string :description
       t.references :projects, index: true, foreign_key: true
       
       t.timestamps
