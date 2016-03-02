@@ -1,5 +1,6 @@
 class AttribsController < ApplicationController
     before_action :set_project
+    before_action :set_attrib, only: [:edit, :update, :destroy]
     
     def index
         @attribs = @project.attribs.all
@@ -19,22 +20,9 @@ class AttribsController < ApplicationController
     end
     
     def edit
-        @project = Project.find(params[:project_id])
-        @attrib = @project.attribs.find([params[:id]]).first
-    end
-    
-    def update
-        @project = Project.find(params[:id])
-        if @project.update(project_params)
-            redirect_to @project
-        else
-            render :edit
-        end
     end
     
      def update
-        @project = Project.find(params[:project_id])
-        @attrib = @project.attribs.find([params[:id]]).first
         if @attrib.update(attrib_params)
             redirect_to project_path(@project)
         else
@@ -44,15 +32,21 @@ class AttribsController < ApplicationController
     end
     
     def destroy
-        @project = Project.find(params[:project_id])
-        @project.attribs.find([params[:id]]).first.destroy
+        @attrib.destroy
         redirect_to project_path(@project)
     end
+    
+    
+    
     
     private
     
     def set_project
         @project = Project.find(params[:project_id])
+    end
+    
+    def set_attrib
+        @attrib = @project.attribs.find([params[:id]]).first
     end
     
      def attrib_params

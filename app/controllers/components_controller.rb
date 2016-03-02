@@ -1,17 +1,17 @@
 class ComponentsController < ApplicationController
+    before_action :set_project
+    before_action :set_component, only: [:edit, :update, :destroy]
+
     
     def index
-        @project = Project.find(params[:project_id])
         @components = @project.components.all
     end
     
     def new
-        @project = Project.find(params[:project_id])
         @component = @project.components.build
     end
     
     def create
-        @project = Project.find(params[:project_id])
         @component = @project.components.build(component_params)
         if @component.save
             redirect_to @project
@@ -21,13 +21,9 @@ class ComponentsController < ApplicationController
     end
     
     def edit
-        @project = Project.find(params[:project_id])
-        @component = @project.components.find([params[:id]]).first
     end
     
     def update
-        @project = Project.find(params[:project_id])
-        @component = @project.components.find([params[:id]]).first
         if @component.update(component_params)
             redirect_to @project
         else
@@ -36,12 +32,22 @@ class ComponentsController < ApplicationController
     end
     
     def destroy
-        @project = Project.find(params[:project_id])
-        @project.components.find([params[:id]]).first.destroy
+        @component.destroy
         redirect_to project_path(@project)
     end
     
+    
+    
+    
     private
+    
+    def set_project
+        @project = Project.find(params[:project_id])
+    end
+    
+    def set_component
+        @component = @project.components.find([params[:id]]).first
+    end
     
     def component_params
       params.require(:component).permit(:name)
