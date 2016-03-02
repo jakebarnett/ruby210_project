@@ -1,5 +1,6 @@
  <h1>Add an Attribute to </h1>
 
+<%= render 'shared/errors', object: @attrib %>
 <%= form_for([@project, @attrib]) do |f| %>
     <fieldset>
         <div class="field">

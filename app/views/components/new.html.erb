@@ -1,5 +1,6 @@
  <h1>Add a Component</h1>
 
+<%= render 'shared/errors', object: @component %>
 <%= form_for([@project, @component]) do |f| %>
     <fieldset>
         <div class="field">
