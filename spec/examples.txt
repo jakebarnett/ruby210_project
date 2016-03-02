@@ -1,13 +1,16 @@
 example_id                                               | status | run_time        |
 -------------------------------------------------------- | ------ | --------------- |
-./spec/features/attribs/create_attribute_spec.rb[1:1]    | passed | 0.63773 seconds |
-./spec/features/attribs/delete_attribute_spec.rb[1:1]    | passed | 0.05715 seconds |
-./spec/features/attribs/edit_attribute_spec.rb[1:1]      | passed | 0.06972 seconds |
-./spec/features/attribs/list_attribute_spec.rb[1:1]      | passed | 0.01827 seconds |
-./spec/features/components/create_component_spec.rb[1:1] | passed | 0.62667 seconds |
-./spec/features/project/create_project_spec.rb[1:1]      | passed | 1.17 seconds    |
-./spec/features/project/delete_project_spec.rb[1:1]      | passed | 0.03113 seconds |
-./spec/features/project/edit_project_spec.rb[1:1]        | passed | 0.04745 seconds |
-./spec/features/project/list_project_spec.rb[1:1]        | passed | 0.01691 seconds |
-./spec/features/project/list_project_spec.rb[1:2:1]      | passed | 0.01957 seconds |
-./spec/features/project/show_project_spec.rb[1:1]        | passed | 0.02381 seconds |
+./spec/features/attribs/create_attribute_spec.rb[1:1]    | passed | 0.097 seconds   |
+./spec/features/attribs/delete_attribute_spec.rb[1:1]    | passed | 0.08628 seconds |
+./spec/features/attribs/edit_attribute_spec.rb[1:1]      | passed | 0.05573 seconds |
+./spec/features/attribs/list_attribute_spec.rb[1:1]      | passed | 0.01426 seconds |
+./spec/features/components/create_component_spec.rb[1:1] | passed | 0.44377 seconds |
+./spec/features/components/delete_component_spec.rb[1:1] | passed | 0.41786 seconds |
+./spec/features/components/edit_component_spec.rb[1:1]   | passed | 0.99231 seconds |
+./spec/features/components/list_component_spc.rb[1:1]    | passed | 0.48144 seconds |
+./spec/features/project/create_project_spec.rb[1:1]      | passed | 0.04856 seconds |
+./spec/features/project/delete_project_spec.rb[1:1]      | passed | 0.05216 seconds |
+./spec/features/project/edit_project_spec.rb[1:1]        | passed | 0.08712 seconds |
+./spec/features/project/list_project_spec.rb[1:1]        | passed | 0.01917 seconds |
+./spec/features/project/list_project_spec.rb[1:2:1]      | passed | 0.03459 seconds |
+./spec/features/project/show_project_spec.rb[1:1]        | passed | 0.04124 seconds |

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User can delete a project" do
+RSpec.feature "User can delete an attribute" do
     before(:all) do
         Project.destroy_all
         @project1 = FactoryGirl.create(:project)
