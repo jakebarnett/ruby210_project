@@ -20,3 +20,26 @@
 
 <p><%= link_to("Edit", edit_project_path) %></p>
 <p><%= link_to("Delete", project_path(@project), method: :delete) %></p>
+
+
+
+<table border="1" style="width:100%">
+    <thead>
+        <tr>
+            <td></td>
+            <% @attribs.each do |attribute| %>
+                <td><%= attribute.name %></td>
+            <% end %>
+        </tr>
+    </thead>
+    <tbody>
+        <% @components.each do |component| %>
+            <tr>
+                <td><%= component.name %></td>
+                <% @attribs.count.times do %>
+                <td></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
