@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "User can edit a project's details" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+        
         Project.destroy_all
         @project1 = FactoryGirl.create(:project)
     end

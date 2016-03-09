@@ -2,6 +2,9 @@ require "rails_helper"
 
 RSpec.feature "Edit an attribute" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Project.destroy_all
         Attrib.destroy_all
     end

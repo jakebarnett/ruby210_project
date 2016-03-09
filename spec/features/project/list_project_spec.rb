@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.feature "Lists all the projects", type: :feature do
     before(:all) do
         Project.destroy_all
+        
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
     end
     
     scenario "it lets users know if there are no projects" do
@@ -18,10 +21,13 @@ RSpec.feature "Lists all the projects", type: :feature do
           @project2 = FactoryGirl.create(:project)
           @project3 = FactoryGirl.create(:project)
           @project4 = FactoryGirl.create(:project)
+          
+          @user = FactoryGirl.create(:user)
+          sign_in(@user)
         end
         
         scenario "it lists all the projects" do
-            visit '/projects'
+            visit projects_path
             
             expect(current_path).to eq(projects_path)
             expect(page).to have_content('4 projects')

@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Creating a new capability" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Project.destroy_all
         Component.destroy_all
         Attrib.destroy_all

@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Creating a new Attribute" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Attrib.destroy_all
         @project = FactoryGirl.create(:project)
     end

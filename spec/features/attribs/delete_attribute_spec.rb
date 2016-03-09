@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "User can delete an attribute" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Project.destroy_all
         @project1 = FactoryGirl.create(:project)
         @attribute1 = @project1.attribs.create!(name: 'Test Attribute 1')

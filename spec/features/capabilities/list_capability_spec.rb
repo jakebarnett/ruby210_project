@@ -2,6 +2,9 @@ require "rails_helper"
 
 RSpec.feature "Lists all capabilities for a project" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Project.destroy_all
         Component.destroy_all
         Attrib.destroy_all

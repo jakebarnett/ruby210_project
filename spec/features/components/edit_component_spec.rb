@@ -2,6 +2,9 @@ require "rails_helper"
 
 RSpec.feature "Edit a component" do
     before(:all) do
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         Project.destroy_all
         Component.destroy_all
     end

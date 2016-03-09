@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Creating a new Component" do
     before(:all) do
-    #     Attrib.destroy_all
+        @user = FactoryGirl.create(:user)
+        sign_in(@user)
+
         @project = FactoryGirl.create(:project)
     end
     
