@@ -1,15 +1,5 @@
  <h1>Edit Component</h1>
 
-<%= form_for([@project, @component]) do |f| %>
-    <fieldset>
-        <div class="field">
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-        </div>
-        
-        <div class="actions">
-            <%= f.submit %>
-        </div>
-    </fieldset>
-<% end %>
+<%= render 'form' %>
+
 <%= link_to("Delete", project_component_path(@project, @component), method: :delete) %>

@@ -1,9 +1,15 @@
- <h1>Edit Capability</h1>
-
-<%= form_for(@capability) do |f| %>
+<%= form_for(@capability) do |f|%>
 <%= render 'shared/errors', object: @capability %>
   
 <fieldset>
+  <div class="field">
+    <%= f.label :attribute %><br />
+    <%= f.select :attrib_id, Attrib.where(project_id: params[:id]).all.collect { |p| [ p.name, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :component %><br />
+    <%= f.select :component_id, Component.where(project_id: params[:id]).all.collect { |p| [ p.name, p.id ] } %>
+  </div>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -21,5 +27,3 @@
   </div>
 </fieldset>
 <% end %>
-
-<%= link_to("Delete Capability", capability_path(:id => @capability.id), method: :delete) %>

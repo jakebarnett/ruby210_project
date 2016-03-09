@@ -1,15 +1,5 @@
  <h1>Edit Attribute</h1>
 
-<%= form_for([@project, @attrib]) do |f| %>
-    <fieldset>
-        <div class="field">
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-        </div>
-        
-        <div class="actions">
-            <%= f.submit %>
-        </div>
-    </fieldset>
-<% end %>
+<%= render 'form' %>
+
 <%= link_to("Delete", project_attrib_path(@project, @attrib), method: :delete) %>

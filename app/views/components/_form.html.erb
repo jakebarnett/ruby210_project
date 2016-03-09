@@ -1,0 +1,13 @@
+<%= render 'shared/errors', object: @component %>
+<%= form_for([@project, @component]) do |f| %>
+    <fieldset>
+        <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    </fieldset>
+<% end %>

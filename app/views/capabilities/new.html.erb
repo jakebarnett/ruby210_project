@@ -1,32 +1,3 @@
- <h1>Add a Capability</h1>
- <h2><%= @project  %></h2>
+<h1>Add a Capability</h1>
 
-<%= form_for(@capability) do |f|%>
-<%= render 'shared/errors', object: @capability %>
-  
-<fieldset>
-  <div class="field">
-    <%= f.label :attribute %><br />
-    <%= f.select :attrib_id, Attrib.where(project_id: params[:id]).all.collect { |p| [ p.name, p.id ] } %>
-  </div>
-  <div class="field">
-    <%= f.label :component %><br />
-    <%= f.select :component_id, Component.where(project_id: params[:id]).all.collect { |p| [ p.name, p.id ] } %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :passing %><br />
-    <%= f.check_box :passing %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-</fieldset>
-<% end %>
+<%= render 'form' %>

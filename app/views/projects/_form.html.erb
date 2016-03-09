@@ -1,0 +1,18 @@
+<%= render 'shared/errors', object: @project %>
+<%= form_for @project do |f| %>
+    <fieldset>
+        <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :description %><br>
+            <%= f.text_field :description %>
+        </div>
+        
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    </fieldset>
+<% end %>
