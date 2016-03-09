@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :components
   end
   
+  resources :capabilities
   
   root to:  'home#index'
 end

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301074426) do
+ActiveRecord::Schema.define(version: 20160307221753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attribs", force: :cascade do |t|
-    t.integer  "project_id"
     t.string   "name"
     t.string   "description"
+    t.integer  "project_id"
     t.integer  "projects_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,9 +27,19 @@ ActiveRecord::Schema.define(version: 20160301074426) do
 
   add_index "attribs", ["projects_id"], name: "index_attribs_on_projects_id", using: :btree
 
+  create_table "capabilities", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.boolean "passing"
+    t.integer "attrib_id"
+    t.integer "component_id"
+  end
+
+  add_index "capabilities", ["attrib_id", "component_id"], name: "index_capabilities_on_attrib_id_and_component_id", using: :btree
+
   create_table "components", force: :cascade do |t|
-    t.integer  "project_id"
     t.string   "name"
+    t.integer  "project_id"
     t.integer  "projects_id"
     t.datetime "created_at"
     t.datetime "updated_at"

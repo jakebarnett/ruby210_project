@@ -22,6 +22,8 @@ class ProjectsController < ApplicationController
     def show
         @attribs = @project.attribs.all
         @components = @project.components.all
+        @capabilities = Capability.all.select{ |c| c.attrib.project_id == @project.id }
+
     end
     
     def edit

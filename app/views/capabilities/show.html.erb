@@ -1,0 +1,12 @@
+<%= "#{pluralize(@capabilities.count, "capabilities")}" %>
+<%= "#{component.name}" %>
+
+<% @capabilities.each do |capability| %>
+    
+    <h2><%= capability.name %></h2>
+    <h2><%= capability.description %></h2>
+    <h2><%= capability.passing %></h2>
+
+<% end %>
+
+<p><% link_to("New Capability", new_capability_path) %></p>

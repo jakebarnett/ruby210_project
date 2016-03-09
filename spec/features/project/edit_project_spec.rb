@@ -9,7 +9,7 @@ RSpec.feature "User can edit a project's details" do
     scenario "a user clicks edit, changes details, and saves" do
         visit "/projects"
         click_link "Project #{@project1.name} Info"
-        click_link "Edit"
+        click_link "Edit Project"
         
         fill_in "project_name",         with: "Updated Project Name"
         fill_in "project_description",  with: "Updated Project Description"

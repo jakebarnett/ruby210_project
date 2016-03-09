@@ -1,0 +1,25 @@
+ <h1>Edit Capability</h1>
+
+<%= form_for(@capability) do |f|%>
+<%= render 'shared/errors', object: @capability %>
+  
+<fieldset>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :passing %><br />
+    <%= f.check_box :passing %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</fieldset>
+<% end %>
+
+<%= link_to("Delete Capability", capability_path(:id => @capability.id), method: :delete) %>
