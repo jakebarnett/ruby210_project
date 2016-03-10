@@ -1,27 +1,71 @@
-<p><%= link_to("Edit Project", edit_project_path) %></p>
-<p><%= link_to("Delete", project_path(@project), method: :delete) %></p>
 <h1><%= @project.name %></h1>
+<p><%= link_to("Edit Project", edit_project_path) %> | <%= link_to("Delete", project_path(@project), method: :delete) %></p>
 <p><%= @project.description %></p>
 
-<h2>Attributes</h2>
-<ul>
-    <% @attribs.each do |attribute| %>
-    <li><%= attribute.name %></li><span><%= link_to("Edit Attribute", edit_project_attrib_path(@project, attribute)) %></span>
-    <% end %>
-</ul>
-<p><%= link_to("Add Attribute", new_project_attrib_path(@project)) %></p>
+<table class="info-table">
+    <thead>
+        <tr>
+            <td>
+                Components
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                The different pieces that make up your project.
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @components.each do |component| %>
+        <tr>
+            <td>
+                <%= component.name %> <span class="edit-span"><%= link_to("Edit Component", edit_project_component_path(@project, component)) %></span>
+            </td>
+        </tr>
+        <% end %>
+        <tr>
+            <td>
+                <%= link_to("Add Component", new_project_component_path(@project)) %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="info-table">
+    <thead>
+        <tr>
+            <td>
+                Attributes
+            </td>
+        </tr>
+        <tr colspan="2">
+            <td>
+                The adjectives you would use to describe your project in its ideal state.
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @attribs.each do |attribute| %>
+        <tr>
+            <td>
+                <%= attribute.name %> <span class="edit-span"><%= link_to("Edit Attribute", edit_project_attrib_path(@project, attribute)) %></span>
+            </td>
+        </tr>
+        <% end %>
+        <tr>
+            <td>
+                <%= link_to("Add Attribute", new_project_attrib_path(@project)) %>  
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 
-<h2>Components</h2>
-<ul>
-    <% @components.each do |component| %>
-    <li><%= component.name %></li><span><%= link_to("Edit Component", edit_project_component_path(@project, component)) %></span>
-    <% end %>
-</ul>
-<p><%= link_to("Add Component", new_project_component_path(@project)) %></p>
-
-<h2>Capabilites</h2>
-<table>
+        
+<h3>Capabilites</h3>
+<p>The test to make sure your attributes describe your components</p>  
+<p><%= link_to("Add Capability", new_capability_path(:id => @project.id)) %></p>
+<table id="projects">
     <thead>
         <tr>
             <td>Attribute</td>
@@ -43,10 +87,12 @@
         <% end %>
     </tbody>
 </table>
-<p><%= link_to("Add Capability", new_capability_path(:id => @project.id)) %></p>
+
+<br>
+<br>
 
 
-<table border="1" style="width:100%">
+<table class="info-table">
     <thead>
         <tr>
             <td></td>
@@ -59,7 +105,14 @@
         <% @components.each do |component| %>
             <tr>
                 <td><%= component.name %></td>
-                <% @attribs.count.times do %>
+                <% @attribs.each do |attribute| %>
+                    <td class="intersection">
+                        <% @capabilities.each do |cap| %>
+                            <% if cap.attrib_id == attribute.id && cap.component_id == component.id%>
+                                <p class="results"><%= cap.passing %></p>
+                            <% end %>
+                        <% end %>
+                    </td>
                 <% end %>
             </tr>
         <% end %>

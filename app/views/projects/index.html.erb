@@ -1,9 +1,11 @@
 <%= "#{pluralize(@projects.count, "project")}" %>
 
-<% @projects.each do |project| %>
-<h2><%= project.name %></h2>
-<p><%= project.description %></p>
-<p><%= link_to("Project #{project.name} Info", project_path(project)) %></p>
-<% end %>
-
-<p><%= link_to("New Project", new_project_path) %></p>
+<div class="project-index">
+    <% @projects.each do |project| %>
+    <h2><%= project.name %></h2>
+    <p><%= project.description %></p>
+    <p><%= link_to("Project #{project.name} Info", project_path(project)) %></p>
+    <% end %>
+    
+    <p><%= link_to("New Project", new_project_path) %></p>
+</div>

@@ -12,4 +12,33 @@
  *
  *= require_tree .
  *= require_self
+ *= require dataTables/jquery.dataTables
+ *= require jquery-ui
+ *= require foundation_and_overrides
+
  */
+ 
+ .red {
+     background-color: red;
+ }
+ 
+ .green {
+      background-color: green;
+ }
+ 
+ .results {
+     display: none;
+ }
+ 
+ .edit-span{
+     float: right;
+ }
+ 
+ .info-table {
+  width: 95%;
+  margin: auto;
+ }
+ 
+ .project-index {
+  margin: 3em;
+ }

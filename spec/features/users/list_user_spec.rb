@@ -15,7 +15,9 @@ RSpec.feature 'Lists all users: ', type: :feature do
     
     scenario 'displays the users' do 
       visit '/'
-      click_link 'Users'
+      # click_link 'Users'
+      
+      first(:link, "Users").click
       
       expect(current_url).to eq(users_url)
       expect(page).to have_content('3 users')
